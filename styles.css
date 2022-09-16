@@ -1,0 +1,189 @@
+* {                                             /*Tirar tudo de espaço que o navegador coloca*/
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+ul {
+
+    list-style: none;                         /*Retirar estilo de lista*/
+}
+
+body {
+    background-image: url(./assets/bg.jpg);   /*Insere a imagem de fundo através de um link de onde a imagem se localiza */
+    background-position: top center;         /*Posicionamento do fundo ele tem que ficar no topo e centralizado */
+    background-size: 100% auto;              /*Largura da imagem está 100% disponível e a altura automática */
+    background-repeat: no-repeat;           /*Não repetir a imagem */
+    background-color: #121214;           /*cor hexadecimal localizada na parte que não tem a imagem de fundo */
+}
+
+body * {
+
+    font-family: 'Inter', sans-serif;
+    line-height: 160%; 
+}
+
+header {
+    padding-top: 32px;
+    height: calc(120px + 32px); /*Somando oa header para que os conteúdos da página fiquem no lugar, exceto a foto do git*/
+    
+
+}
+
+header div {
+
+    width: 120px;
+    margin: auto;
+    background-image: linear-gradient(90deg, #9572FC 0%, #43E7AD 50.52%, #E2D45C 100%); 
+
+    border-radius: 50%;
+
+    display: flex;
+    padding: 4px;                        /*preenchimento da borda da imagem github*/
+
+    transition: transform .3s;         /*fazendo a transição do transforme em 3 segundos*/
+
+}
+
+header div:hover {                    /*Ao passar o mouse oir cima da foto a mesma da uma leve pulsada*/
+
+    transform: scale(1.1);
+}
+
+header img {
+
+    width: 100%;
+    border-radius: 50%;
+}
+
+/*
+
+main * {                              /*O asterisco 'main*' é um seletor universal
+
+    border: 1px solid greenyellow;
+}
+
+*/
+
+main{
+
+    max-width: 580px;                    /*Tudo que estiver dentro do main HTML vai ser mantido essa largura máxima*/
+    width: 90%;                         /*Relativo a largura da tela*/
+    margin: 32px auto;
+    
+    display: grid;
+    gap: 24px;
+
+    margin-top: 32px;
+}
+
+section{
+
+    color:white;
+    background-image: linear-gradient(90deg, #9572FC 0%, #43E7AD 50.52%, #E2D45C 100%);
+    padding-top: 4px;
+    border-radius: 10px;
+}
+
+section div {
+
+    background-color: #2A2634;
+    padding: 32px;
+    padding-top: 24px;
+    border-radius: 8px;
+}
+
+section h2{
+
+    letter-spacing: -0.47px;
+    
+}
+
+section p{
+
+    letter-spacing: -0.18px;
+    color: #A1A1AA;
+
+}
+
+section ul{
+
+    display:flex;                   /*Visualização das caixas no html*/
+    flex-wrap: wrap;                /*Ajuste da caixa 'meus jogos' pra caso add mais jogos*/            
+    gap: 16px;   
+    
+    margin-top: 24px;
+}
+
+section ul li {
+
+    transition: transform .3s;
+
+}
+
+section ul li:hover {
+
+    transform: scale(1.1);
+
+}
+
+.games-list img {
+
+    width: 90px;
+    border-radius: 8px;
+
+}
+
+.channel-list img {
+
+    border-radius: 50%;
+    width: 70px;
+    border: 2px solid #443E54;
+
+}
+
+/*ANIMATION*/
+
+    header div {
+        animation: fromTop .7s .2s backwards;       /*Backwards puxa todas as propriedades do keyframes para o header div pra assim iniciar juntos */
+    }
+
+    main section {
+        animation: fromBottom .7s;
+    }
+
+    main sectio:nth-child(1) {
+        animation-delay: 0;
+    }
+
+    main section:nth-child(2) {
+        animation-delay: .4s;
+    }
+
+    main section:nth-child(3) {
+        animation-delay: .8s;
+    }
+
+    @keyframes fromTop {               /*Definição da animação*/
+        from {
+            opacity: 0;
+            transform: translateY(-30px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0)
+        }
+    }
+
+    @keyframes fromBottom {
+        from {
+            opacity: 0;
+            transform: translateY(-30px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0)
+        }
+    }
